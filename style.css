@@ -1,0 +1,142 @@
+:root{
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+
+    /*typografia*/
+
+    --fraunces: "Fraunces", serif;
+    --monserrat:"Montserrat", sans-serif;
+
+    --separador:min(5%,2rem);
+    --gap:min(2vw,2rem);
+
+    /*imagen*/
+    --imagen:url(images/image-product-desktop.jpg);
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height:100vh;
+    background-color: var(--Cream);
+    font-size: 14px;
+}
+.main{
+    display: flex;
+    
+    width: 550px;
+    border-radius: 0.5rem;
+    height: auto;
+}
+.main__imagen{
+    width: 50%;
+    height: auto;
+    flex-grow: 1;
+    background-image: var(--imagen);    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.main__contenido{
+    background-color: var(--White);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    padding: var(--separador);
+    width: 50%;
+
+}
+
+.contenido--perfume{
+    color: var(--Dark-grayish-blue);
+    font-family: var(--monserrat);
+    letter-spacing: 0.4rem;
+    font-size: 0.6rem;
+    
+}
+.contenido--titulo{
+    
+    color: var(--Very-dark-blue);
+    font-weight: 700;
+    font-family: var(--fraunces);
+    width: 90%;
+}
+.contenido--parrafo{
+    color: var(--Dark-grayish-blue);
+    line-height: 1.5 ;
+    font-family: var(--monserrat);
+
+}
+.contenido--precios{
+    
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+.precio--1{
+    font-size: 2rem;
+    color: var(--Dark-cyan);
+    font-weight: 700;
+}
+
+.precio--2{
+    color: var(--Dark-grayish-blue);
+}
+
+.contenido--boton{
+    display: flex;
+    width: 100%;
+    align-self: center;
+    padding: 0.7rem 0;
+    border-radius: 0.5rem;
+    background-color: var(--Dark-cyan);
+    gap: 0.5rem;
+    justify-content: center;
+    color: var(--White);
+    border: none;
+}
+.contenido--boton:hover{
+    --Dark-cyan: hsl(158, 36%, 15%);
+
+}
+@media (max-width:376px) {
+    :root{
+        --gap: 2vh;
+        --separador:5%;
+        --imagen:url(images/image-product-mobile.jpg);
+    }
+    body{
+        font-size: 18px;
+    }
+    .main{
+        flex-direction: column;
+        padding: var(--separador);
+        height: auto;
+        align-items: center;
+        width: 100%;
+    }
+    .main__imagen{
+        flex-grow: 1;
+        height: 30vh;
+        width: 100%;
+    }
+    .main__contenido{
+        flex-grow: 3;
+        width: auto;
+    }    
+}
